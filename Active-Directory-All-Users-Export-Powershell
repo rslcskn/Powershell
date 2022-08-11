@@ -1,0 +1,5 @@
+Get-ADUser -Filter {Enabled -eq “True”} -properties * | 
+
+Select-Object -Property samaccountname,DisplayName| 
+
+ConvertTo-Csv | Out-File “C:\activeusers.csv”
